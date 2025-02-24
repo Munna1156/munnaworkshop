@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Design</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style type="text/css">
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+    }
+    
+    header {
+    background: #333;
+    color: white;
+    padding: 15px;
+    }
+    
+    nav ul {
+    list-style: none;
+    padding: 0;
+    }
+    
+    nav ul li {
+    display: inline;
+    margin: 0 15px;
+    }
+    
+    nav ul li a {
+    color: white;
+    text-decoration: none;
+    }
+    
+    section {
+    padding: 40px;
+    margin: 20px;
+    background: white;
+    border-radius: 10px;
+    }
+    
+    .workshop-card {
+    background: #e0e0e0;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    width: 40%;
+    }
+    
+    form input, form textarea {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    }
+    
+    button {
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    }
+    
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Creative Workshop</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Workshops</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>Welcome to Our Workshop</h2>
+        <p>Join us for hands-on creative workshops designed for all skill levels.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Workshops</h2>
+        <div class="workshop-card">
+            <h3>Painting Workshop</h3>
+            <p>Explore your creativity with acrylic and watercolor techniques.</p>
+        </div>
+        <div class="workshop-card">
+            <h3>Woodworking Basics</h3>
+            <p>Learn the fundamentals of woodworking and craft your own project.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="response"></p>
+    </section>
+
+    <script src="script.js">document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+    
+    if (name && email && message) {
+    document.getElementById("response").innerText = "Thank you! Your message has been sent.";
+    document.getElementById("contact-form").reset();
+    } else {
+    document.getElementById("response").innerText = "Please fill in all fields.";
+    }
+    });
+    </script>
+</body>
+</html>
